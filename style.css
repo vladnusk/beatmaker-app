@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+i,
+svg {
+  pointer-events: none;
+}
+
+.sound-title {
+  width: 8rem;
+}
+
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+}
+
+.kick-pad {
+  background-color: rgb(118, 118, 211);
+}
+.snare-pad {
+  background-color: rgb(226, 82, 111);
+}
+.hihat-pad {
+  background-color: rgb(130, 214, 214);
+}
+
+.kick-pad.active {
+  background-color: rgb(25, 25, 219);
+}
+.snare-pad.active {
+  background-color: rgb(226, 0, 45);
+}
+.hihat-pad.active {
+  background-color: rgb(0, 185, 185);
+}
+
+.sequencer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hihat-tracks,
+.snare-tracks,
+.kick-tracks {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.kick,
+.snare,
+.hihat {
+  display: flex;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 0 2rem;
+}
+
+.controls button {
+  padding: 1rem;
+  border: none;
+  background-color: rgb(65, 62, 62);
+  color: wheat;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.pad {
+  transition: all 0.5s ease;
+}
+
+.play {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: rgb(65, 62, 62);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 3rem;
+}
+
+select {
+  padding: 1rem;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+.mute.active {
+  background: rgb(172, 165, 165);
+}
+
+.tempo {
+  margin: 3rem;
+  width: 30%;
+}
+.tempo p {
+  font-size: 1.5rem;
+  margin: 2rem;
+  text-align: center;
+}
+.tempo-slider {
+  padding: 0.2rem;
+  -webkit-appearance: none;
+  margin: 1rem 0;
+  width: 100%;
+  position: relative;
+  background-color: rgb(88, 88, 88);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 1348px) {
+  .sound-title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .hihat-tracks,
+  .snare-tracks,
+  .kick-tracks {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .kick-pad,
+  .snare-pad,
+  .hihat-pad {
+    width: 3rem;
+    height: 3rem;
+  }
+  .tempo {
+    margin: 2rem;
+    width: 50%;
+  }
+  .kick,
+  .snare,
+  .hihat {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 509px) {
+  .kick-pad,
+  .snare-pad,
+  .hihat-pad {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem 0.2rem;
+  }
+  .tempo {
+    margin: 1rem;
+  }
+  .tempo p {
+    margin: 1rem;
+    font-size: 1rem;
+  }
+
+  .hihat-tracks,
+  .snare-tracks,
+  .kick-tracks {
+    margin-top: 1.5rem;
+  }
+  .play {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+
+    margin: 1.5rem;
+  }
+}
